@@ -68,8 +68,9 @@ export class DisplayContainerComponent {
       item.count = updatedCountFromBackend;
       console.log("Updated count from backend: " + updatedCountFromBackend);
       this.cdr.detectChanges(); // Trigger change detection
+    }else{
+      console.log("Error updating count from backend");
     }
-    console.log("Updated count from backend: " + updatedCountFromBackend);
   }
 
   async saveToJSON(item: { question: string; link: string; count: number }){
