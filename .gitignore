@@ -31,6 +31,7 @@ Backend/Java/Demo/mvnw.cmd
 Frontend/Angular/Demo/.angular
 Frontend/Angular/Demo/.vscode
 Frontend/Angular/Demo/node_modules
+Frontend/Angular/Demo/dist/*
 Backend/Node/node_modules
 
 
