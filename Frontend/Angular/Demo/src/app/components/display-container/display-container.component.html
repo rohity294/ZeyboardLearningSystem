@@ -1,0 +1,23 @@
+<div class="content">
+  <table>
+    <thead>
+      <tr>
+        <th>Question</th>
+        <th>Attempt Count</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of selectedSubModuleBody">
+        <td><a href="{{item.link}}" target="_blank" rel="noopener noreferrer">{{item.question}}</a></td>
+        <td>{{item.count}}</td>
+        <td><button (click)="incrementCount(item)">Increment</button></td>
+      </tr>
+    </tbody>
+  </table> 
+  
+  <div style="text-align: center">
+    <a (click)="launch($event)" class="btn launch">Launch App</a>
+  </div>
+  <div>{{ validationMessage }}</div>
+</div>

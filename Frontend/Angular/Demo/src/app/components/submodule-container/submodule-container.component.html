@@ -1,0 +1,33 @@
+d<!-- <span class="centerAligner">Click card to explore submodule</span> -->
+<br />
+<br />
+<div class="centerAligner">
+  <div class="submoduleContainer">
+    <div class="loopItem" *ngFor="let item of cards; index as i">
+      <app-card
+        [title]="item.title"
+        [body]="item.body"
+        [link]="item.link"
+        [isSubmodule]="item.isSubmodule"
+        [brief]="item.brief"
+        [myImagePath]="item.myImagePath"
+      ></app-card>
+    </div>
+  </div>
+</div>
+
+<app-pagination
+  [pages]="pages"
+  [selectedPageIndex]="selectedPageIndex"
+  (passSelectedPageIndexToParent)="receiveSelectedPageIndexFromChild($event)"
+>
+</app-pagination>
+
+<app-display-container
+  *ngIf="showDisplayContainer"
+  [selectedSubModuleTitle]="selectedSubModuleTitle"
+  [selectedSubModuleBody]="selectedSubModuleBody"
+  [selectedSubModuleLink]="selectedSubModuleLink"
+>
+</app-display-container>
+

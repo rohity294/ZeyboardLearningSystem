@@ -1,0 +1,17 @@
+.rightAndLeftMarginProvider {
+  margin-left: 20px;
+  margin-right: 20px;
+  color: whitesmoke;
+  background-color: #1e1e1e;
+}
+
+
+
+.yanone-kaffeesatz-font {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 350;
+  font-style: normal;
+  font-size: large;
+}
+

@@ -1,0 +1,25 @@
+.centerAligner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submoduleContainer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.loopItem{
+  margin-left: 25px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .submoduleContainer {
+    flex-direction: column; /* Vertical layout */
+  }
+
+  .loopItem{
+    margin-bottom: 25px;
+  }
+}

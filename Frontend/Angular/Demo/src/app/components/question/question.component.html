@@ -1,0 +1,23 @@
+<div class="container mt-4">
+  <form (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <label for="inputQuestion">Please type your question here</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputQuestion"
+        [(ngModel)]="inputQuestion"
+        name="inputQuestion"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <!-- <p *ngIf="isQuestionSubmitted">You Asked: {{ inputQuestion }}</p> -->
+</div>
+
+<div *ngIf="isQuestionScreeningPassed">
+  <app-answer
+    [parsedOpenAIDataResponse]="parsedOpenAIDataResponse"
+  ></app-answer>
+</div>

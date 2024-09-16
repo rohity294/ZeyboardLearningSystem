@@ -1,0 +1,13 @@
+<div class="card" style="width: 18rem">
+  <img class="card-img-top myImageHeightAdjuster" [src]='myImagePath' alt="Card image cap" />
+  <div class="card-body">
+    <h5 class="card-title">{{ title }}</h5>
+    <p class="card-text">{{ brief }}</p>
+    <p class="card-text">{{ labels }}</p>
+    <p class="card-text">{{ link }}</p>
+    <a (click)="onCardChosenButton(title,body,isSubmodule,link)" class="btn btn-primary">Explore {{
+      title | splitFirstPart : "|"
+    }}</a>
+  </div>
+</div>
+

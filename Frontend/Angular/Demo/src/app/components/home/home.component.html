@@ -1,0 +1,120 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<div class="toolbar" role="banner">
+  <img width="50" alt="Angular Logo" src="{{ logoPath }}" alt="logo" />
+  <span>Onboard with Zeyboard</span>
+  <div>
+    <app-menu (dataToParent)="receiveDataFromChild($event)"></app-menu>
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<div class="components">
+  <div class="content" role="main">
+    <!-- <div class="card highlight-card card-small">
+        <img width="120" alt="logo" src="{{ logoPath }}" />
+      </div> -->
+
+    <!-- <h2 class="orangeHighlighter roboto-bold">zeyboard.tech</h2> -->
+    <!-- <h2 class="orangeHighlighter roboto-bold" [@fadeInAnimation]>zeyboard.tech</h2> -->
+
+    <!-- <h4 class="orangeHighlighter special-elite-regular"> -->
+    <h4
+      class="special-elite-regular"
+      style="background-color: #1e1e1e; color: #ee8133; font-size: 18px"
+    >
+      {{ typedText | async }}
+    </h4>
+    <h3 *ngIf="loginStatus">Welcome, {{ loggedInUsername }}</h3>
+
+    <div [@slideInOutAnimation]>
+      <app-container
+        (dataToParent)="receiveDataFromChild($event)"
+        [pages]="pages"
+        *ngIf="showAIApplicationsListing; else elseBlock"
+      ></app-container>
+    </div>
+
+    <ng-template #elseBlock>
+      <div class="textBolder">
+        <p
+          *ngIf="
+            selectedAIApplication !== '' &&
+            selectedAIApplication !== 'About' &&
+            selectedAIApplication !== 'Register' &&
+            selectedAIApplication !== 'Login' &&
+            selectedAIApplication !== 'DSA'
+          "
+        >
+          <b style="color: white; font-size: 20px;">{{ selectedAIApplication }}'s profile</b>
+        </p>
+      </div>
+    </ng-template>
+  </div>
+
+  <div class="leftAligner" *ngIf="selectedAIApplication === 'Register'">
+    <app-register></app-register>
+  </div>
+
+  <div
+    class="leftAligner"
+    *ngIf="selectedAIApplication === 'Login' && !loginStatus"
+  >
+    <app-login></app-login>
+  </div>
+
+  <div class="leftAligner" *ngIf="selectedAIApplication === 'About'">
+    <app-about></app-about>
+  </div>
+  
+  <div class="leftAligner" *ngIf="selectedAIApplication && selectedAIApplication !== 'About' ">
+    <app-aimodule></app-aimodule>
+  </div>
+
+  <!-- <div class="leftAligner" *ngIf="selectedAIApplication === 'SpeechToText'">
+      <app-speech-to-text-capturer></app-speech-to-text-capturer>
+  </div> -->
+
+</div>
+
+<footer>
+  zeyboard | &copy; zeyboard.tech
+  <div class="socialLinks">
+    <!-- Home -->
+    <a href="javascript:location.reload()"> Home </a>
+    |
+    <!-- Contact Us -->
+    <a href="https://www.linkedin.com/company/zeyboard/about/" target="_blank">
+      Contact Us
+    </a>
+    |
+    <!-- Linkedin -->
+    <a href="https://www.linkedin.com/company/zeyboard/about/" target="_blank">
+      Linkedin
+    </a>
+    |
+    <!-- Facebook -->
+    <a
+      href="https://www.facebook.com/profile.php?id=100088572225778&sk=about"
+      target="_blank"
+    >
+      Facebook
+    </a>
+    <!-- | -->
+    <!-- Twitter -->
+    <!-- <a href="#" target="_blank"> Twitter </a> -->
+    <!-- | -->
+    <!-- Instagram -->
+    <!-- <a href="#" target="_blank"> Instagram </a> -->
+    <!-- | -->
+    <!-- TikTok -->
+    <!-- <a href="#" target="_blank"> TikTok </a> -->
+  </div>
+</footer>

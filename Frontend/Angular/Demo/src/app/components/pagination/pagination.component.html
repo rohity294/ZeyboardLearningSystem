@@ -1,0 +1,11 @@
+<link rel="stylesheet" type="text/css" href="pagination.component.css">
+
+<div class="centerAligner">
+  <button class="pageButton"
+    *ngFor="let page of pages; let i = index"
+    [ngClass]="{ selected: i === selectedPageIndex }"
+    (click)="selectPage(i)"
+  >
+    {{ page }}
+  </button>
+</div>

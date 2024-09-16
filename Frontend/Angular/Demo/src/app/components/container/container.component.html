@@ -1,0 +1,20 @@
+<!-- <span>Click card to explore!</span><br />-->
+<br /> 
+<div class="componentContainer">
+  <div class="loopItem" *ngFor="let item of cards; index as i">
+    <app-card
+      [title]="item.title"
+      [isSubmodule]="item.isSubmodule"
+      [brief]="item.brief"
+      [link]="item.link"
+      [myImagePath]="item.myImagePath"
+      [labels]="item.labels"
+      (dataToParent)="receiveDataFromChild($event)"
+    ></app-card>
+  </div>
+</div>
+<app-pagination
+  [pages]="pages"
+  (passSelectedPageIndexToParent)="receiveSelectedPageIndexFromChild($event)"
+>
+</app-pagination>

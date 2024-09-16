@@ -1,0 +1,32 @@
+
+.content{
+  background-color: #1e1e1e;
+}
+
+.launch{
+  background-color: #ee8133;
+  color:black;
+}
+
+.launch:hover{
+  background-color: #00a16d;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2; /* Light grey for even rows */
+}
+tr:nth-child(odd) {
+  background-color: #ffffff; /* White for odd rows */
+}
+tr:hover {
+  background-color: #f5f5f5; /* Slightly darker grey for hover */
+}

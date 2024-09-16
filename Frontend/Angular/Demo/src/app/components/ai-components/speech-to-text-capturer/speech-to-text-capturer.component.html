@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Speech Recognition</title>
+  </head>
+  <body>
+    <div class="container">
+      <!--page container -->
+      <div
+        class="text-box"
+        contenteditable="true"
+        *ngFor="let sentence of sentences"
+      >
+        {{ sentence }}
+      </div>
+
+      <div *ngIf="isQuestionScreeningPassed">
+        <app-answer
+          [parsedOpenAIDataResponse]="parsedOpenAIDataResponse"
+        ></app-answer>
+      </div>
+      <!--text box which will contain spoken text -->
+      <button
+        *ngIf="!listening"
+        class="fa fa-microphone"
+        (click)="startListening()"
+      >
+        <img src="assets/images/icon_mic.png" />
+      </button>
+      <!-- microphone icon to be clicked before speaking -->
+      <button
+        *ngIf="listening"
+        class="fa fa-microphone"
+        (click)="stopListening()"
+      >
+        <img src="assets/images/icon_stop_listening.png" />
+      </button>
+    </div>
+    <audio #audioPlayer>
+      <source src="assets/audio/audio_ding.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+  </body>
+</html>
