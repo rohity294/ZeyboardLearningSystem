@@ -22,7 +22,7 @@ export class HomeComponent {
   pages: number[] = [1, 2, 3];
   loginStatus: boolean = false;
   loggedInUsername: any;
-  titles = ['Welcome to Zeyboard!', 'Connect with recruiters', 'Connect with talent', 'Contact Us Now!'];
+  titles = ['Welcome to zeyboard.com', 'Connect with recruiters', 'Connect with talent', 'Contact Us Now!'];
   typedText;
   title: string = 'AI POD Demo';
   logoPath: string = 'assets/images/zeyboard_logo.png';
